@@ -1,4 +1,15 @@
-/*Made By: Charles M Milam Jr | Date: 10-14-23 | MG.css*/
+
+/* 
+PORJECT NAME: matching game
+FILE: style.html
+DATE: 10/30/2023
+MOD DATE: 
+MOD CHANGES: 
+MOD LINE: 
+VERSION: 0.0.1
+PROGRAMER: Charles Matthew Milam Jr
+ */
+
 html,body{
   background-color: rgb(100, 101, 98);
   margin: 0;
@@ -32,9 +43,6 @@ html,body{
 color: #5c3d3d;
 } 
 /* start button */
-.createStart{
-
-}
 .startBtn{
   width: 250px;
   height: 75px;
@@ -81,15 +89,9 @@ color: #5c3d3d;
   background-color: rgb(123, 154, 190);
   transition: .5s;
 }
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/* TILE FACES */
-/* img{
 
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 /* GAME LOGIC */
-
-
-
 .game{
   width: 100%;
   height: 100vh;
@@ -101,8 +103,6 @@ color: #5c3d3d;
 }
 .tilecontainer{
 max-width: 80%;
-  /* width: 100%; */
-
   display: flex;
   flex-wrap: wrap;
   transform-style: preserve-3d;
@@ -110,9 +110,8 @@ max-width: 80%;
   display: flex;
   align-items: center;
   justify-content: center;
-margin: auto;
+  margin: auto;
 }
-
 .tile{
   width: 13dvi;
   height: 13dvi;
@@ -121,7 +120,6 @@ margin: auto;
   transform-style: preserve-3d;
   transition: transform .5s;
 } 
-
 .back, .front{
   width: 100%;
   height: 100%;
@@ -131,16 +129,12 @@ margin: auto;
   border: 2px solid;
   pointer-events: none;
 }
-
 .tile.flip{
   transform: rotateY(180deg);
 }
-
 .front{
   transform: rotateY(180deg);
 }
-
-
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 /* GAME MENU CONTROL AND TRANSITION */
 .startMenu, .game{
