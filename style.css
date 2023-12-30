@@ -56,8 +56,28 @@ color: #5c3d3d;
   cursor: pointer;
 }
 .startBtn:hover{
-  background-color: rgb(122, 170, 118);
+  background-color: rgb(102, 149, 97);
   transition: .5s;
+  box-shadow: 0 0 5px black;
+}
+/* projects button */
+.projectsBtn{
+  width: 250px;
+  height: 75px;
+  font-size: 25px;
+  font-weight: 900;
+  border-radius: 10px;
+  border: 0;
+  background-color: rgb(78, 58, 96);
+  color: rgb(221, 255, 242);
+  transition: .5s;
+  cursor: pointer;
+  margin: 20px;
+}
+.projectsBtn:hover{
+  background-color: rgb(101, 93, 154);
+  transition: .5s;
+  box-shadow: 0 0 5px black;
 }
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
 /* GAME SCREEN */
@@ -88,6 +108,7 @@ color: #5c3d3d;
 .startmeueBtn:hover{
   background-color: rgb(123, 154, 190);
   transition: .5s;
+  box-shadow: 0 0 5px black;
 }
 
 /*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/

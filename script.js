@@ -77,6 +77,27 @@ startbutton = function(){
         createStart.appendChild(startBtn);
     };
     startbutton();
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+// BACK TO PROJECTS
+projectsContainer = function(){
+    createProject = document.createElement('div');
+    createProject.setAttribute('class', 'projects');
+        startMenu.appendChild(createProject);
+    };
+    projectsContainer();
+createLink = function(){
+    createA = document.createElement('a');
+    createA.setAttribute('href', 'https://08milam.github.io/projects/');
+        createProject.appendChild(createA);
+    };
+createLink()
+startbutton = function(){
+    projectBtn = document.createElement('button');
+    projectBtn.setAttribute('class', 'projectsBtn');
+    projectBtn.textContent = 'PROJECTS';
+        createA.appendChild(projectBtn);
+    };
+    startbutton();
 
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 // START MENU BUTTON
@@ -95,7 +116,6 @@ start = function(){
         });
     };
     start();
-
 back = function(){
     startBtn.addEventListener('click', function(){
         contentcontainer.classList.toggle('startgame');
