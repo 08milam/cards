@@ -11,7 +11,7 @@ contentcontainer = document.querySelector('.contentcontainer');
 // start screen is the container for all element
 startScreen = function(){
     startMenu = document.createElement('div');
-    startMenu.setAttribute('class', 'startMenu')
+    startMenu.setAttribute('class', 'game')
         contentcontainer.appendChild(startMenu)
     }
     startScreen()
@@ -19,7 +19,7 @@ startScreen = function(){
 // GAME SCREEN
 gameScreen = function(){
     game = document.createElement('div');
-    game.setAttribute('class', 'game')
+    game.setAttribute('class', 'startMenu')
         contentcontainer.appendChild(game)
     }
     gameScreen()
