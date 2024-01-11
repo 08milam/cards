@@ -7,140 +7,92 @@
 // VERSION: 0.0.1
 // PROGRAMER: Charles Matthew Milam Jr
 
-//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-// HTML JAVASCRIP LINK AND MAIN CONTAINER
-contentcontainer = document.querySelector(".contentcontainer");
-//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-// START SCREEN
-// start screen is the container for element from line 27 to 58
-function startScreen() {
-  startMenu = document.createElement("div");
-  startMenu.setAttribute("class", "game");
-  contentcontainer.appendChild(startMenu);
-}
-startScreen();
-//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-// GAME SCREEN
-// game screen is the container for element from line 27 to 57
-function gameScreen() {
-  game = document.createElement("div");
-  game.setAttribute("class", "startMenu");
-  contentcontainer.appendChild(game);
-}
-gameScreen();
-//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-//INTRO
-function introContainer() {
-  createIntro = document.createElement("div");
-  createIntro.setAttribute("class", "createIntro");
-  startMenu.appendChild(createIntro);
-}
-introContainer();
+// Main container
+const contentContainer = document.querySelector(".contentcontainer");
 
-function startintro() {
-  startMessage = document.createElement("h1");
-  startMessage.setAttribute("class", "startMessage");
-  startMessage.textContent = "MATCHING CARD GAME";
-  createIntro.appendChild(startMessage);
+// Create screen function
+function createScreen(className, parentElement) {
+  const screen = document.createElement("div");
+  screen.setAttribute("class", className);
+  parentElement.appendChild(screen);
+  return screen;
 }
-startintro();
-//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-//TOP BUTTON CONTAINER
-buttonContainer = document.createElement("div");
-buttonContainer.setAttribute("class", "buttoncontainer");
-game.appendChild(buttonContainer);
-//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-// START BUTTON
-function startContainer() {
-  createStart = document.createElement("div");
-  createStart.setAttribute("class", "createStart");
-  startMenu.appendChild(createStart);
-}
-startContainer();
 
-function startbutton() {
-  startBtn = document.createElement("button");
-  startBtn.setAttribute("class", "startBtn");
-  startBtn.textContent = "START";
-  createStart.appendChild(startBtn);
-}
-startbutton();
-//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-// BACK TO PROJECTS
-function projectsContainer() {
-  createProject = document.createElement("div");
-  createProject.setAttribute("class", "projects");
-  startMenu.appendChild(createProject);
-}
-projectsContainer();
-function createLink() {
-  createA = document.createElement("a");
-  createA.setAttribute("href", "https://08milam.github.io/projects/");
-  createProject.appendChild(createA);
-}
-createLink();
-startbutton = function () {
-  projectBtn = document.createElement("button");
-  projectBtn.setAttribute("class", "projectsBtn");
-  projectBtn.textContent = "PROJECTS";
-  createA.appendChild(projectBtn);
-};
-startbutton();
+// Start screen
+const startMenu = createScreen("game", contentContainer);
 
-//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-// START MENU BUTTON
-function backbutton() {
-  startMenuBtn = document.createElement("button");
-  startMenuBtn.setAttribute("class", "startmeueBtn");
-  startMenuBtn.textContent = "START MENU";
-  buttonContainer.appendChild(startMenuBtn);
-}
-backbutton();
-//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-//RESET
-function resetBtn() {
-  reset = document.createElement("button");
-  reset.setAttribute("class", "reset");
-  reset.textContent = "RESET";
-  buttonContainer.appendChild(reset);
-}
-resetBtn();
+// Game screen
+const game = createScreen("startMenu", contentContainer);
 
-// Add a click event listener to the reset button
+// Intro container
+const introContainer = createScreen("createIntro", startMenu);
+
+// Start intro
+const startIntro = document.createElement("h1");
+startIntro.setAttribute("class", "startMessage");
+startIntro.textContent = "MATCHING CARD GAME";
+introContainer.appendChild(startIntro);
+
+// Top button container
+const buttonContainer = createScreen("buttoncontainer", game);
+
+// Start container
+const createStart = createScreen("createStart", startMenu);
+
+// Start button
+const startBtn = document.createElement("button");
+startBtn.setAttribute("class", "startBtn");
+startBtn.textContent = "START";
+createStart.appendChild(startBtn);
+
+// Projects container
+const createProject = createScreen("projects", startMenu);
+
+// Create link
+const createA = document.createElement("a");
+createA.setAttribute("href", "https://08milam.github.io/projects/");
+createProject.appendChild(createA);
+
+// Projects button
+const projectBtn = document.createElement("button");
+projectBtn.setAttribute("class", "projectsBtn");
+projectBtn.textContent = "PROJECTS";
+createA.appendChild(projectBtn);
+
+// Start menu button
+const startMenuBtn = document.createElement("button");
+startMenuBtn.setAttribute("class", "startmeueBtn");
+startMenuBtn.textContent = "START MENU";
+buttonContainer.appendChild(startMenuBtn);
+
+// Reset button
+const reset = document.createElement("button");
+reset.setAttribute("class", "reset");
+reset.textContent = "RESET";
+buttonContainer.appendChild(reset);
+
+// Click event listener for the reset button
 reset.addEventListener("click", function () {
   location.reload();
 });
 
-//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-//SCORE
-function scoreContainer() {
-  createScore = document.createElement("div");
-  createScore.setAttribute("class", "createScore");
-  buttonContainer.appendChild(createScore);
-}
-scoreContainer();
+// Score container
+const createScore = createScreen("createScore", buttonContainer);
 
-function score() {
-  bestscore = document.createElement("h2");
-  bestscore.setAttribute("class", "bestScore");
+// Score
+const bestscore = document.createElement("h2");
+bestscore.setAttribute("class", "bestScore");
+createScore.appendChild(bestscore);
 
-  createScore.appendChild(bestscore);
-}
-score();
-//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-// GAME TRANSITION CONTROLS: START MENU, GAME SCREEN
-function start() {
-  startMenuBtn.addEventListener("click", function () {
-    contentcontainer.classList.toggle("startgame");
-  });
-}
-start();
-function back() {
-  startBtn.addEventListener("click", function () {
-    contentcontainer.classList.toggle("startgame");
-  });
-}
-back();
+// Game transition controls
+startMenuBtn.addEventListener("click", function () {
+  contentContainer.classList.toggle("startgame");
+});
+
+startBtn.addEventListener("click", function () {
+  contentContainer.classList.toggle("startgame");
+});
+
 
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx

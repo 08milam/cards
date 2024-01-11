@@ -9,18 +9,17 @@ VERSION: 0.0.1
 PROGRAMER: Charles Matthew Milam Jr
  */
 
-html,
-body {
+/* Global Styles */
+html, body {
   background-color: rgb(100, 101, 98);
   margin: 0;
 }
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/* MAIN CONTAINER */
+
+/* Container Styles */
 .contentcontainer {
   background-color: rgb(67, 67, 67);
 }
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/* BUTTON CONTAINER */
+
 .buttoncontainer {
   width: 100%;
   height: auto;
@@ -29,8 +28,7 @@ body {
   justify-content: center;
 }
 
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/* START SCREEN */
+/* Start Screen Styles */
 .startMenu {
   width: 100%;
   height: 100vh;
@@ -40,16 +38,14 @@ body {
   justify-content: center;
   flex-direction: column;
 }
-/* start massage */
+
 .startMessage {
   text-align: center;
   font-size: 50px;
   color: rgb(46, 46, 46);
 }
-/* best score */
-.bestScore {
-  color: #5c3d3d;
-  position: relative;
+
+.bestScore, .startBtn, .projectsBtn {
   width: 250px;
   height: 75px;
   font-size: 25px;
@@ -59,48 +55,33 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(69, 95, 125);
   margin: 16px;
+  cursor: pointer;
+  transition: background-color 0.5s, box-shadow 0.5s;
 }
-/* start button */
+
+.bestScore {
+  color: #5c3d3d;
+  background-color: rgb(69, 95, 125);
+}
+
 .startBtn {
-  width: 250px;
-  height: 75px;
-  font-size: 25px;
-  font-weight: 900;
-  border-radius: 10px;
-  border: 0;
   background-color: rgb(58, 96, 81);
   color: rgb(221, 239, 255);
-  transition: 0.5s;
-  cursor: pointer;
 }
-.startBtn:hover {
+
+.startBtn:hover, .projectsBtn:hover {
   background-color: rgb(102, 149, 97);
-  transition: 0.5s;
   box-shadow: 0 0 5px black;
 }
-/* projects button */
+
 .projectsBtn {
-  width: 250px;
-  height: 75px;
-  font-size: 25px;
-  font-weight: 900;
-  border-radius: 10px;
-  border: 0;
   background-color: rgb(78, 58, 96);
   color: rgb(221, 255, 242);
-  transition: 0.5s;
-  cursor: pointer;
   margin: 20px;
 }
-.projectsBtn:hover {
-  background-color: rgb(101, 93, 154);
-  transition: 0.5s;
-  box-shadow: 0 0 5px black;
-}
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/* GAME SCREEN */
+
+/* Game Screen Styles */
 .game {
   width: 100%;
   background-color: rgb(100, 101, 98);
@@ -111,76 +92,45 @@ body {
   perspective: 800px;
 }
 
-/* back to start button */
-.startmeueBtn {
+.startmeueBtn, .reset {
   width: 250px;
   height: 75px;
   font-size: 25px;
   font-weight: 900;
   border-radius: 10px;
   border: 0;
-  background-color: rgb(69, 95, 125);
-  color: rgb(221, 239, 255);
-  transition: 0.5s;
+  transition: background-color 0.5s, box-shadow 0.5s;
   margin: 16px;
-}
-.startmeueBtn:hover {
-  background-color: rgb(123, 154, 190);
-  transition: 0.5s;
-  box-shadow: 0 0 5px black;
-}
-/* reset button */
-.reset {
-  width: 250px;
-  height: 75px;
-  font-size: 25px;
-  font-weight: 900;
-  border-radius: 10px;
-  border: 0;
-  background-color: rgb(69, 95, 125);
-  color: rgb(221, 239, 255);
-  transition: 0.5s;
-  margin: 16px;
+  cursor: pointer;
 }
 
-.reset:hover {
+.startmeueBtn:hover, .reset:hover {
   background-color: rgb(123, 154, 190);
-  transition: 0.5s;
   box-shadow: 0 0 5px black;
 }
 
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/* GAME LOGIC */
-.game {
-  width: 100%;
-  height: 100vh;
-  background-color: rgb(100, 101, 98);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
+/* Game Logic Styles */
 .tilecontainer {
   max-width: 80%;
   display: flex;
   flex-wrap: wrap;
   transform-style: preserve-3d;
   perspective: 900px;
-  display: flex;
   align-items: center;
   justify-content: center;
   margin: auto;
 }
+
 .tile {
-  width: 13dvi;
-  height: 13dvi;
+  width: 13vw;
+  height: 13vw;
   margin: 8px;
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.5s;
 }
-.back,
-.front {
+
+.back, .front {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -189,26 +139,30 @@ body {
   border: 2px solid;
   pointer-events: none;
 }
+
 .tile.flip {
   transform: rotateY(180deg);
 }
+
 .front {
   transform: rotateY(180deg);
 }
-/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
-/* GAME MENU CONTROL AND TRANSITION */
-.startMenu,
-.game {
+
+/* Game Menu Control and Transition Styles */
+.startMenu, .game {
   position: absolute;
   backface-visibility: hidden;
 }
+
 .contentcontainer {
   transform-style: preserve-3d;
   transition: all 2s cubic-bezier(0.155, 0.75, 0.52, 1.25);
 }
+
 .contentcontainer.startgame {
   transform: rotateY(180deg);
 }
+
 .startMenu {
   transform: rotateY(180deg);
 }
